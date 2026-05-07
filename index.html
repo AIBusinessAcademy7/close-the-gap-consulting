@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Close the Gap Consulting | AI Strategy & Leadership</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 100;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .logo span {
+      color: #10b981;
+    }
+
+    nav a {
+      color: #1f2937;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #10b981;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 2rem;
+      background: #f8fafc;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #dbeafe;
+      color: #0369a1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.875rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #10b981;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #059669;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid #10b981;
+      color: #10b981;
+    }
+
+    .btn-secondary:hover {
+      background: #f0fdf4;
+    }
+
+    /* Approach */
+    .approach {
+      padding: 4rem 2rem;
+    }
+
+    .approach h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .approach-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .approach-col h3.challenge {
+      color: #dc2626;
+    }
+
+    .approach-col h3.solution {
+      color: #10b981;
+    }
+
+    .approach-col ul {
+      list-style: none;
+    }
+
+    .approach-col li {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    /* Services */
+    .services {
+      background: #f9fafb;
+      padding: 4rem 2rem;
+    }
+
+    .services h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .services-subtitle {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 3rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      padding: 2rem;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .service-card p {
+      color: #6b7280;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Email Section */
+    .email-section {
+      background: #3b82f6;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .email-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 500px;
+      margin: 1.5rem auto 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .email-form input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    .email-form button {
+      padding: 0.75rem 1.5rem;
+      background: #1e40af;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .email-form button:hover {
+      background: #1e3a8a;
+    }
+
+    .error-message {
+      color: #fecaca;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    /* About */
+    .about {
+      padding: 4rem 2rem;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #6b7280;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .credentials {
+      background: #f3f4f6;
+      padding: 3rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    .credentials h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .credentials ul {
+      list-style: none;
+    }
+
+    .credentials li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .credentials-icon {
+      color: #10b981;
+      font-weight: 500;
+      min-width: 24px;
+    }
+
+    .quote {
+      margin-top: 3rem;
+      padding: 2rem;
+      border-left: 4px solid #10b981;
+      background: #f3f4f6;
+      border-radius: 6px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: #f9fafb;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta p {
+      margin-bottom: 2rem;
+      color: #6b7280;
+      line-height: 1.7;
+    }
+
+    /* Contact */
+    .contact {
+      background: #10b981;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-links a:hover {
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    footer {
+      background: #f3f4f6;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    footer a {
+      color: #10b981;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo"><span>Close the Gap</span> Consulting</div>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">For Professional Services & Enterprise Teams</span>
+      <h1>Move Your Organization from AI Resistance to Readiness</h1>
+      <p>Your managers aren't against AI. They're uncertain. They lack clarity about what it means for their teams. They need confidence and practical frameworks to lead adoption responsibly. That's where we come in.</p>
+      <div class="button-group">
+        <a href="#contact" class="btn btn-primary">Schedule Discovery Call</a>
+        <a href="#approach" class="btn btn-secondary">Learn Our Approach</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="approach" id="approach">
+    <div class="container">
+      <h2>From Resistance to Readiness</h2>
+      <div class="approach-grid">
+        <div class="approach-col">
+          <h3 class="challenge">The Challenge</h3>
+          <ul>
+            <li>Managers are skeptical about AI's impact on their teams</li>
+            <li>Lack of clarity on how to implement responsibly</li>
+            <li>Fear of disruption without clear benefits</li>
+            <li>No framework for building confidence in their leadership</li>
+          </ul>
+        </div>
+        <div class="approach-col">
+          <h3 class="solution">Our Solution</h3>
+          <ul>
+            <li>✓ Provide clarity: What is AI? What does it do? What matters?</li>
+            <li>✓ Build confidence: Hands-on training tailored to their reality</li>
+            <li>✓ Enable leadership: Frameworks for responsible adoption</li>
+            <li>✓ Drive results: Strategy aligned to your business goals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="services-subtitle">Customized for your organization's stage and needs</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📊</div>
+          <h3>AI Readiness Assessment</h3>
+          <p>Understand where your organization stands: resistance points, capability gaps, and opportunities for adoption.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎯</div>
+          <h3>Leadership Strategy Sessions</h3>
+          <p>Move managers from resistance to readiness. Build the clarity, confidence, and practical frameworks needed to lead AI adoption.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔄</div>
+          <h3>Fractional AI Strategy</h3>
+          <p>Ongoing partnership for mid-market enterprises. Strategy, roadmapping, and responsible AI integration aligned to your business goals.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📚</div>
+          <h3>Training Programs</h3>
+          <p>Complement strategy with education. Custom training designed for your teams' skill levels and business context.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Section -->
+  <section class="email-section">
+    <div class="container">
+      <h2>Stay Informed</h2>
+      <p>Strategic insights, case studies, and AI adoption best practices for enterprise leaders.</p>
+      <form class="email-form" id="emailForm">
+        <input type="email" placeholder="Your email" id="emailInput" required>
+        <button type="submit" id="emailButton">Subscribe</button>
+      </form>
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about">
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>Close the Gap Consulting is built on the foundation of real entrepreneurial experience and proven AI expertise. We're not consultants who've never run a business. We're strategists who understand the complexity of scaling organizations in an AI era.</p>
+      
+      <div class="credentials">
+        <h3>Credentials & Experience</h3>
+        <ul>
+          <li><span class="credentials-icon">★</span> 20+ years in entrepreneurship & business transformation</li>
+          <li><span class="credentials-icon">✓</span> Vanderbilt University - Prompt Engineering Certification</li>
+          <li><span class="credentials-icon">✓</span> Johns Hopkins University - AI Business Strategy Program</li>
+          <li><span class="credentials-icon">✓</span> AI practitioner since 2020/2021</li>
+          <li><span class="credentials-icon">✓</span> Specialized expertise in manager resistance to AI adoption</li>
+        </ul>
+      </div>
+
+      <div class="quote">
+        "Technology will keep changing. But our commitment to helping you lead that change—with clarity, integrity, and real business results—stays constant."
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Complement Strategy with Education</h2>
+      <p>Close the Gap Consulting includes access to <strong>AI Business Academy™</strong>, our signature education program. Build team capability through hands-on training while strategy creates the roadmap.</p>
+      <a href="https://aibusinessacademy.ai" class="btn btn-primary">Explore ABA →</a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Let's Talk Strategy</h2>
+      <p>Schedule a confidential discovery call to explore how Close the Gap Consulting can support your organization's AI adoption journey.</p>
+      <div class="contact-links">
+        <a href="tel:470-317-9270">📞 470-317-9270</a>
+        <a href="mailto:info@closethegapconsulting.com">📧 info@closethegapconsulting.com</a>
+      </div>
+      <p>McDonough, GA | Serving Mid-Market & Enterprise Organizations</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Close the Gap Consulting | AI Strategy & Leadership Development</p>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Contact</a>
+    </div>
+    <p style="margin-top: 1rem;">© 2025 Close the Gap Consulting. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const emailForm = document.getElementById('emailForm');
+    const emailInput = document.getElementById('emailInput');
+    const emailButton = document.getElementById('emailButton');
+    const errorMessage = document.getElementById('errorMessage');
+
+    emailForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = emailInput.value;
+
+      if (!email) return;
+
+      emailButton.disabled = true;
+      emailButton.textContent = 'Adding...';
+      errorMessage.textContent = '';
+
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, list: 'ctgc' })
+        });
+
+        if (response.ok) {
+          emailButton.textContent = '✓ Subscribed';
+          emailInput.value = '';
+          setTimeout(() => {
+            emailButton.disabled = false;
+            emailButton.textContent = 'Subscribe';
+          }, 3000);
+        } else {
+          errorMessage.textContent = 'Something went wrong. Try again.';
+          emailButton.disabled = false;
+          emailButton.textContent = 'Subscribe';
+        }
+      } catch (error) {
